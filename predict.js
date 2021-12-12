@@ -1,5 +1,6 @@
 let model;
 $( document ).ready(async function () {
+	$('.predict-button').hide();
 	$('.loading-text').show();
     $('.result').hide();
     $('#custom-btn').hide();
@@ -22,8 +23,10 @@ $(".image-selector").change(function () {
 	}
 	
 	let file = $(".image-selector").prop('files')[0];
+	$('.result-text').text("Please Click Predict!")
 
 	reader.readAsDataURL(file);
+	$('.predict-button').show();
 });
 
 $("#predict-button").click(async function () {

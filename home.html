@@ -46,7 +46,7 @@
         </div>
       </div>
 
-      <button id="predict-button">Predict</button>
+      <button id="predict-button" class="predict-button">Predict</button>
 
 
       <!-- script for animation -->
@@ -73,6 +73,8 @@
             cancelBtn.addEventListener("click", function(){
               img.src = "";
               wrapper.classList.remove("active");
+              document.querySelector(".predict-button").style.display = "none";
+              document.querySelector(".result-text").innerHTML = "Choose the Image First!";
             })
             reader.readAsDataURL(file);
           }
